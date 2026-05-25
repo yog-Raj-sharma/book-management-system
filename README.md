@@ -2,8 +2,8 @@
 
 A single-page React application for managing a personal library. Users can view, add, edit, and delete books, search by title or author, and filter by genre. All data is persisted through a REST API.
 
-**Live demo:** https://book-management-system-76p7.onrender.com
-**Repository:** https://github.com/yog-Raj-sharma/book-management-system
+- **Live demo:** https://book-management-system-76p7.onrender.com
+- **Repository:** https://github.com/yog-Raj-sharma/book-management-system
 
 ---
 
