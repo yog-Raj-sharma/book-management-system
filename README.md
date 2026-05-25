@@ -19,6 +19,18 @@ A single-page React application for managing a personal library. Users can view,
 
 ---
 
+## Screenshots
+
+**Library view** — responsive grid with live search and genre filter:
+
+![Book list view](./screenshots/list-view.png)
+
+**Add / edit form** — the same validated form is reused for both:
+
+![Add or edit book form](./screenshots/add-edit-form.png)
+
+---
+
 ## Tech Stack
 
 - **React 19** — UI library
@@ -124,23 +136,26 @@ Open the URL shown in the terminal (usually `http://localhost:5173`).
 
 ---
 
-## Deployment
+## Deployment (Render)
 
-The app is a static site after building, so it can be hosted on Vercel, Netlify, or any static host.
-
-### Deploying on Vercel
+The app is a static site after building, so it deploys on Render as a **Static Site**.
 
 1. Push the project to GitHub.
-2. Import the repository at [vercel.com](https://vercel.com).
-3. Vercel auto-detects Vite. Confirm the settings:
-   - **Build command:** `npm run build`
-   - **Output directory:** `dist`
+2. In the [Render dashboard](https://dashboard.render.com), click **New → Static Site** and connect your repository.
+3. Configure the build settings:
+   - **Build Command:** `npm run build`
+   - **Publish Directory:** `dist`
 4. Under **Environment Variables**, add:
    - Key: `VITE_API_URL`
    - Value: your MockAPI base URL
-5. Deploy.
+5. Add a **Rewrite Rule** so client-side routing and page refreshes don't 404:
+   - Go to the site's **Redirects/Rewrites** tab.
+   - Source: `/*` &nbsp; Destination: `/index.html` &nbsp; Action: **Rewrite**
+6. Click **Create Static Site**. Render builds and deploys to `https://<your-site>.onrender.com`.
 
-> **Important:** The `VITE_API_URL` variable must be set in the hosting dashboard, not just in your local `.env` (which is gitignored and never uploaded). If the deployed app shows no books, a missing environment variable is the most common cause.
+Every push to the connected branch triggers an automatic redeploy.
+
+> **Important:** `VITE_API_URL` must be set in Render's dashboard, not just in your local `.env` (which is gitignored and never uploaded). If the deployed app shows no books, a missing environment variable is the most common cause. After changing an environment variable on Render, trigger a **Manual Deploy → Clear build cache & deploy** so the new value is baked into the build.
 
 ---
 
