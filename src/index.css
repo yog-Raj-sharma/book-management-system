@@ -1,0 +1,99 @@
+/* ============================================================
+   Design tokens — an editorial "reading room" aesthetic:
+   warm paper background, ink text, a single oxblood accent.
+   ============================================================ */
+:root {
+  --paper: #f4efe6;
+  --paper-raised: #fbf8f1;
+  --ink: #211d18;
+  --ink-soft: #5c544a;
+  --ink-faint: #8a8076;
+  --accent: #8c2f2a;
+  --accent-soft: #b65a4f;
+  --line: #ddd4c5;
+  --line-strong: #c9bda8;
+  --shadow-sm: 0 1px 2px rgba(33, 29, 24, 0.06);
+  --shadow: 0 1px 2px rgba(33, 29, 24, 0.06), 0 10px 30px rgba(33, 29, 24, 0.1);
+  --shadow-lg: 0 20px 60px rgba(33, 29, 24, 0.22);
+
+  --radius: 10px;
+  --radius-sm: 6px;
+  --maxw: 1120px;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Newsreader', Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--paper);
+  background-image: radial-gradient(rgba(33, 29, 24, 0.022) 1px, transparent 1px);
+  background-size: 4px 4px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Page-load entrance used by the list */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

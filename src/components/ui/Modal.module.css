@@ -1,0 +1,54 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(33, 29, 24, 0.42);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+    z-index: 100;
+    animation: fadeIn 0.18s ease;
+}
+
+.panel {
+    width: 100%;
+    max-width: 520px;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    margin-top: 4vh;
+    animation: riseIn 0.24s ease;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.title {
+    font-size: 1.5rem;
+}
+
+.close {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--ink-faint);
+    padding: 0 4px;
+    transition: color 0.15s ease;
+}
+
+.close:hover {
+    color: var(--accent);
+}
+
+.body {
+    padding: 22px 24px 26px;
+}
