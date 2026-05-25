@@ -60,8 +60,9 @@ export default function BooksPage() {
   }
 
   const handleDelete = (book) => {
-    const ok = window.confirm(`Delete “${book.title}”? This cannot be undone.`)
-    if (ok) removeBook(book.id)
+    // Confirmation is handled inline inside BookCard, so by the time this
+    // runs the user has already confirmed — just delete.
+    removeBook(book.id)
   }
 
   return (
