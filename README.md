@@ -2,8 +2,8 @@
 
 A single-page React application for managing a personal library. Users can view, add, edit, and delete books, search by title or author, and filter by genre. All data is persisted through a REST API.
 
-**Live demo:** _add your deployed URL here_
-**Repository:** _add your GitHub URL here_
+**Live demo:** https://book-management-system-76p7.onrender.com
+**Repository:** https://github.com/yog-Raj-sharma/book-management-system
 
 ---
 
@@ -44,29 +44,48 @@ A single-page React application for managing a personal library. Users can view,
 ## Project Structure
 
 ```
-src/
-├── api/
-│   └── booksApi.js          # All HTTP calls (axios). The only file that knows about the network.
-├── components/
-│   ├── books/
-│   │   ├── BookList.jsx      # Renders the grid + empty state
-│   │   ├── BookCard.jsx      # A single book + edit/delete actions
-│   │   ├── BookForm.jsx      # Add + edit form (reused), with validation
-│   │   └── BookFilters.jsx   # Search input + genre dropdown
-│   └── ui/
-│       ├── Loader.jsx        # Loading spinner
-│       ├── Modal.jsx         # Modal wrapper for the form
-│       └── ErrorMessage.jsx  # Error state with retry
-├── hooks/
-│   └── useBooks.js           # All CRUD logic + loading/error/saving state
-├── pages/
-│   └── BooksPage.jsx         # Composes filters, list, and form; owns UI state
-├── utils/
-│   └── constants.js          # Genre options
-├── App.jsx
-├── main.jsx
-└── index.css                 # Global theme tokens
+book-management-system/
+├── public/
+│   └── book.svg                  # favicon
+├── src/
+│   ├── api/
+│   │   └── booksApi.js           # All HTTP calls (axios). The only file that knows about the network.
+│   ├── components/
+│   │   ├── books/
+│   │   │   ├── BookList.jsx       # Renders the grid + empty state
+│   │   │   ├── BookList.module.css
+│   │   │   ├── BookCard.jsx       # A single book + edit/delete actions
+│   │   │   ├── BookCard.module.css
+│   │   │   ├── BookForm.jsx       # Add + edit form (reused), with validation
+│   │   │   ├── BookForm.module.css
+│   │   │   ├── BookFilters.jsx    # Search input + genre dropdown
+│   │   │   └── BookFilters.module.css
+│   │   └── ui/
+│   │       ├── Loader.jsx         # Loading spinner
+│   │       ├── Loader.module.css
+│   │       ├── Modal.jsx          # Modal wrapper for the form
+│   │       ├── Modal.module.css
+│   │       ├── ErrorMessage.jsx   # Error state with retry
+│   │       └── ErrorMessage.module.css
+│   ├── hooks/
+│   │   └── useBooks.js            # All CRUD logic + loading/error/saving state
+│   ├── pages/
+│   │   ├── BooksPage.jsx          # Composes filters, list, and form; owns UI state
+│   │   └── BooksPage.module.css
+│   ├── utils/
+│   │   └── constants.js           # Genre options
+│   ├── App.jsx                    # Renders <BooksPage />
+│   ├── main.jsx                   # React entry point
+│   └── index.css                  # Global theme tokens + resets
+├── .env.example                   # Template showing the required env variable
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
 ```
+
+Each component is paired with its own `.module.css` file (co-located styles), and class names are scoped per component so they never collide.
 
 The architecture separates concerns into three layers: **components** handle presentation, the **`useBooks` hook** owns all data and state logic, and the **`api` layer** isolates every HTTP call. Components never call the API directly — they read state and call functions exposed by the hook.
 
