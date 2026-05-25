@@ -2,8 +2,9 @@
 
 A single-page React application for managing a personal library. Users can view, add, edit, and delete books, search by title or author, and filter by genre. All data is persisted through a REST API.
 
-- **Live demo:** https://book-management-system-76p7.onrender.com
-- **Repository:** https://github.com/yog-Raj-sharma/book-management-system
+**Live demo:** https://book-management-system-76p7.onrender.com
+
+**Repository:** https://github.com/yog-Raj-sharma/book-management-system
 
 ---
 
@@ -79,6 +80,7 @@ book-management-system/
 │   └── index.css                  # Global theme tokens + resets
 ├── .env.example                   # Template showing the required env variable
 ├── .gitignore
+├── eslint.config.js               # ESLint config (from Vite scaffold)
 ├── index.html
 ├── package.json
 ├── vite.config.js
@@ -101,7 +103,7 @@ The architecture separates concerns into three layers: **components** handle pre
 ### 1. Clone and install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/yog-Raj-sharma/book-management-system.git
 cd book-management-system
 npm install
 ```
